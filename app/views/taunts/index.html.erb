@@ -1,0 +1,27 @@
+<h1>Listing taunts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @taunts.each do |taunt| %>
+      <tr>
+        <td><%= taunt.name %></td>
+        <td><%= taunt.content %></td>
+        <td><%= link_to 'Show', taunt %></td>
+        <td><%= link_to 'Edit', edit_taunt_path(taunt) %></td>
+        <td><%= link_to 'Destroy', taunt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Taunt', new_taunt_path %>
